@@ -186,13 +186,11 @@ public class Home extends SuperTestNG {
 		Assert.assertTrue(UnicityLogo.isDisplayed());
 		Assert.assertEquals(ViewingProducts.getText(), "You are currently viewing product in Karnataka");
 
-		if(userdata.get("platform") == "LIVE") {
-			String[] languages = { "EN", "HI", };
-			for (int i = 0; i < languages.length; i++) {
-				Assert.assertEquals(languages[i], Languages.get(i).getText());
-			}
+		String[] languages = { "ENGLISH", "HINDI", };
+		for (int i = 0; i < languages.length; i++) {
+			Assert.assertEquals(languages[i], Languages.get(i).getText());
 		}
-		
+
 		Thread.sleep(3000);
 		Country.click();
 		Assert.assertEquals(SelectedCountry.getText(), "India");
@@ -224,12 +222,12 @@ public class Home extends SuperTestNG {
 
 	public void Menu(String username) throws InterruptedException, IOException {
 		childtest.log(Status.INFO, "<b><font color=green>Home Page Menu</font></b>");
-		if(userdata.get("platform") == "LIVE") {
-			String[] languages = { "EN", "HI", };
-			for (int i = 0; i < languages.length; i++) {
-				Assert.assertEquals(languages[i], Languages.get(i).getText());
-			}
+
+		String[] languages = { "ENGLISH", "HINDI", };
+		for (int i = 0; i < languages.length; i++) {
+			Assert.assertEquals(languages[i], Languages.get(i).getText());
 		}
+
 		Thread.sleep(10000);
 		childtest.log(Status.INFO, "Checking Languages");
 		MyUnicity.click();
@@ -304,10 +302,10 @@ public class Home extends SuperTestNG {
 		Thread.sleep(5000);
 
 		childtest.log(Status.INFO, "<b><font color=green>ALL Products</font></b>");
-		
+
 		Assert.assertEquals(CurrentState.getText(), "You are currently viewing product in Karnataka");
 		ALLProducts.click();
-		
+
 		FileReader type = new FileReader(
 				"C:/Users/sumancb/git/IndiaShop/India/src/test/java/property/catalog.properties");
 		Properties p = new Properties();
@@ -323,10 +321,10 @@ public class Home extends SuperTestNG {
 
 			Assert.assertEquals(p.getProperty(Products.get(i).getText().replace(" ", "") + "PV"),
 					ProductPV.get(i).getText().replace("PV: ", ""));
-			
+
 			childtest.log(Status.INFO, Products.get(i).getText() + "   " + ProductPV.get(i).getText() + "   "
 					+ ProductItemCode.get(i).getText() + "  " + ProductPrices.get(i).getText());
-			
+
 			for (int j = 0; j < qty.length; j++) {
 				Assert.assertEquals(ProductQty.get(j).getText(), qty[j]);
 			}
@@ -360,7 +358,7 @@ public class Home extends SuperTestNG {
 	}
 
 	public void Products() throws IOException, InterruptedException {
-		
+
 		childtest.log(Status.INFO, "<b><font color=green>Products</font></b>");
 
 		FileReader type = new FileReader(
@@ -369,24 +367,22 @@ public class Home extends SuperTestNG {
 		p.load(type);
 
 		ProductsOnly.click();
-		
+
 		for (int i = 0; i < products.length; i++) {
 			Assert.assertEquals(Products.get(i).getText(), products[i]);
-			
+
 			Assert.assertEquals(p.getProperty(Products.get(i).getText().replace(" ", "") + "CODE"),
 					ProductItemCode.get(i).getText());
-			
-			
+
 			Assert.assertEquals("₹" + p.getProperty(Products.get(i).getText().replace(" ", "") + "PRICE"),
 					ProductPrices.get(i).getText());
-			
-			
+
 			Assert.assertEquals(p.getProperty(Products.get(i).getText().replace(" ", "") + "PV"),
 					ProductPV.get(i).getText().replace("PV: ", ""));
-			
+
 			childtest.log(Status.INFO, Products.get(i).getText() + "   " + ProductPV.get(i).getText() + "   "
 					+ ProductItemCode.get(i).getText() + "  " + ProductPrices.get(i).getText());
-			
+
 			for (int j = 0; j < qty.length; j++) {
 				Assert.assertEquals(ProductQty.get(j).getText(), qty[j]);
 			}
@@ -418,7 +414,7 @@ public class Home extends SuperTestNG {
 	}
 
 	public void Accessories() throws IOException, InterruptedException {
-		
+
 		childtest.log(Status.INFO, "<b><font color=green>Accessories</font></b>");
 
 		FileReader type = new FileReader(
@@ -427,25 +423,21 @@ public class Home extends SuperTestNG {
 		p.load(type);
 
 		Accessories.click();
-		
+
 		for (int i = 0; i < accessories.length; i++) {
 			Assert.assertEquals(Products.get(i).getText(), accessories[i]);
-		
 
 			Assert.assertEquals(p.getProperty(Products.get(i).getText().replace(" ", "") + "CODE"),
 					ProductItemCode.get(i).getText());
-			
 
 			Assert.assertEquals("₹" + p.getProperty(Products.get(i).getText().replace(" ", "") + "PRICE"),
 					ProductPrices.get(i).getText());
-			
 
 			Assert.assertEquals(p.getProperty(Products.get(i).getText().replace(" ", "") + "PV"),
 					ProductPV.get(i).getText().replace("PV: ", ""));
-			
+
 			childtest.log(Status.INFO, Products.get(i).getText() + "   " + ProductPV.get(i).getText() + "   "
 					+ ProductItemCode.get(i).getText() + "  " + ProductPrices.get(i).getText());
-			
 
 			for (int j = 0; j < qty.length; j++) {
 				Assert.assertEquals(ProductQty.get(j).getText(), qty[j]);
@@ -479,9 +471,9 @@ public class Home extends SuperTestNG {
 	public void ALLProductsList() throws IOException, InterruptedException {
 		ListView.click();
 		ALLProducts.click();
-		
+
 		childtest.log(Status.INFO, "<b><font color=green>ALL Products List View</font></b>");
-		
+
 		FileReader type = new FileReader(
 				"C:/Users/sumancb/git/IndiaShop/India/src/test/java/property/catalog.properties");
 		Properties p = new Properties();
@@ -497,9 +489,9 @@ public class Home extends SuperTestNG {
 
 			Assert.assertEquals(p.getProperty(ListViewProductName.get(i).getText().replace(" ", "") + "PV"),
 					ListViewProductPV.get(i).getText().replace("PV: ", ""));
-			
-			childtest.log(Status.INFO, ListViewProductName.get(i).getText() + "   " + ListViewProductPV.get(i).getText() + "   "
-					+ ListViewProductItemCode.get(i).getText() + "  " + ProductPrices.get(i).getText());
+
+			childtest.log(Status.INFO, ListViewProductName.get(i).getText() + "   " + ListViewProductPV.get(i).getText()
+					+ "   " + ListViewProductItemCode.get(i).getText() + "  " + ProductPrices.get(i).getText());
 
 			Assert.assertTrue(ListViewMinus.get(i).isDisplayed());
 			Assert.assertTrue(ListViewQty.get(i).isDisplayed());
@@ -531,7 +523,7 @@ public class Home extends SuperTestNG {
 	}
 
 	public void ProductsList() throws IOException, InterruptedException {
-		
+
 		childtest.log(Status.INFO, "<b><font color=green>Products List View</font></b>");
 
 		FileReader type = new FileReader(
@@ -540,7 +532,7 @@ public class Home extends SuperTestNG {
 		p.load(type);
 
 		ProductsOnly.click();
-		
+
 		Assert.assertTrue(AddtoCart.isDisplayed());
 		for (int i = 0; i < products.length; i++) {
 			Assert.assertEquals(ListViewProductName.get(i).getText(), products[i]);
@@ -555,9 +547,9 @@ public class Home extends SuperTestNG {
 			Assert.assertTrue(ListViewMinus.get(i).isDisplayed());
 			Assert.assertTrue(ListViewQty.get(i).isDisplayed());
 			Assert.assertTrue(ListViewPlus.get(i).isDisplayed());
-			
-			childtest.log(Status.INFO, ListViewProductName.get(i).getText() + "   " + ListViewProductPV.get(i).getText() + "   "
-					+ ListViewProductItemCode.get(i).getText() + "  " + ProductPrices.get(i).getText());
+
+			childtest.log(Status.INFO, ListViewProductName.get(i).getText() + "   " + ListViewProductPV.get(i).getText()
+					+ "   " + ListViewProductItemCode.get(i).getText() + "  " + ProductPrices.get(i).getText());
 
 			JavascriptExecutor jse = (JavascriptExecutor) driver;
 			jse.executeScript("arguments[0].scrollIntoView();", ListViewProductName.get(i));
@@ -585,14 +577,14 @@ public class Home extends SuperTestNG {
 	}
 
 	public void AccessoriesList() throws IOException, InterruptedException {
-		
+
 		childtest.log(Status.INFO, "<b><font color=green>Accessories List View</font></b>");
 
 		FileReader type = new FileReader(
 				"C:/Users/sumancb/git/IndiaShop/India/src/test/java/property/catalog.properties");
 		Properties p = new Properties();
 		p.load(type);
-		
+
 		Accessories.click();
 		Assert.assertTrue(AddtoCart.isDisplayed());
 		for (int i = 0; i < accessories.length; i++) {
@@ -604,9 +596,9 @@ public class Home extends SuperTestNG {
 
 			Assert.assertEquals(p.getProperty(ListViewProductName.get(i).getText().replace(" ", "") + "PV"),
 					ListViewProductPV.get(i).getText().replace("PV: ", ""));
-			
-			childtest.log(Status.INFO, ListViewProductName.get(i).getText() + "   " + ListViewProductPV.get(i).getText() + "   "
-					+ ListViewProductItemCode.get(i).getText() + "  " + ProductPrices.get(i).getText());
+
+			childtest.log(Status.INFO, ListViewProductName.get(i).getText() + "   " + ListViewProductPV.get(i).getText()
+					+ "   " + ListViewProductItemCode.get(i).getText() + "  " + ProductPrices.get(i).getText());
 
 			Assert.assertTrue(ListViewMinus.get(i).isDisplayed());
 			Assert.assertTrue(ListViewQty.get(i).isDisplayed());
@@ -639,12 +631,12 @@ public class Home extends SuperTestNG {
 
 	public void RetailAllProducts() throws InterruptedException, IOException {
 		Thread.sleep(5000);
-		
+
 		childtest.log(Status.INFO, "<b><font color=green>Retail All products in Grid View</font></b>");
-		
+
 		Assert.assertEquals(CurrentState.getText(), "You are currently viewing product in Karnataka");
 		ALLProducts.click();
-		
+
 		FileReader type = new FileReader(
 				"C:/Users/sumancb/git/IndiaShop/India/src/test/java/property/catalog.properties");
 		Properties p = new Properties();
@@ -663,38 +655,38 @@ public class Home extends SuperTestNG {
 			}
 
 			Assert.assertTrue(ProductAddtoCart.get(i).isDisplayed());
-			
-			childtest.log(Status.INFO, Products.get(i).getText() + "   "+ "   "
-					+ ProductItemCode.get(i).getText() + "  " + ProductPrices.get(i).getText());
+
+			childtest.log(Status.INFO, Products.get(i).getText() + "   " + "   " + ProductItemCode.get(i).getText()
+					+ "  " + ProductPrices.get(i).getText());
 
 			Products.get(i).click();
-			
+
 			childtest.log(Status.INFO, "Click on Product");
 
 			Assert.assertEquals(retailallproducts[i], ProductName.getText());
 			childtest.log(Status.INFO, ProductName.getText());
-			
+
 			Assert.assertEquals(p.getProperty(ProductName.getText().replace(" ", "") + "CODE"),
 					ProductItemNumber.getText());
 			childtest.log(Status.INFO, ProductItemNumber.getText());
-			
+
 			Assert.assertEquals(
 					"₹" + p.getProperty(ProductName.getText().replace(" ", "") + "RETAILPRICE").replace(",", ""),
 					ProductPrice.getText().replace(" ", "") + " Tax Included");
 			childtest.log(Status.INFO, ProductPrice.getText());
-			
+
 			Thread.sleep(5000);
 			Assert.assertTrue(ShareLink.isDisplayed());
 			childtest.log(Status.INFO, "Share Link");
-			
+
 			for (int j = 0; j < qty.length; j++) {
 				Assert.assertEquals(SingleProductQty.get(j).getText(), qty[j]);
 			}
 			childtest.log(Status.INFO, "Quantity [1, 2, 3, 4, 5, 6, 7, 8, 9, 10+]");
-			
+
 			Assert.assertTrue(SingleAddtoCart.isDisplayed());
 			childtest.log(Status.INFO, "Add To Cart");
-			
+
 			JavascriptExecutor jse = (JavascriptExecutor) driver;
 			jse.executeScript("window.scrollBy(0,250)", "");
 			/*
@@ -707,14 +699,14 @@ public class Home extends SuperTestNG {
 	}
 
 	public void RetailProducts() throws IOException, InterruptedException {
-		
+
 		childtest.log(Status.INFO, "<b><font color=green>Retail products in Grid View</font></b>");
 
 		FileReader type = new FileReader(
 				"C:/Users/sumancb/git/IndiaShop/India/src/test/java/property/catalog.properties");
 		Properties p = new Properties();
 		p.load(type);
-		
+
 		ProductsOnly.click();
 
 		for (int i = 0; i < retailproducts.length; i++) {
@@ -728,9 +720,9 @@ public class Home extends SuperTestNG {
 			for (int j = 0; j < qty.length; j++) {
 				Assert.assertEquals(ProductQty.get(j).getText(), qty[j]);
 			}
-			
-			childtest.log(Status.INFO, Products.get(i).getText() + "   " +  "   "
-					+ ProductItemCode.get(i).getText() + "  " + ProductPrices.get(i).getText());
+
+			childtest.log(Status.INFO, Products.get(i).getText() + "   " + "   " + ProductItemCode.get(i).getText()
+					+ "  " + ProductPrices.get(i).getText());
 
 			Assert.assertTrue(ProductAddtoCart.get(i).isDisplayed());
 
@@ -761,14 +753,14 @@ public class Home extends SuperTestNG {
 	}
 
 	public void RetailAccessories() throws IOException, InterruptedException {
-		
+
 		childtest.log(Status.INFO, "<b><font color=green>Retail Accessories in Grid View</font></b>");
 
 		FileReader type = new FileReader(
 				"C:/Users/sumancb/git/IndiaShop/India/src/test/java/property/catalog.properties");
 		Properties p = new Properties();
 		p.load(type);
-		
+
 		Accessories.click();
 
 		for (int i = 0; i < retailaccessories.length; i++) {
@@ -784,9 +776,9 @@ public class Home extends SuperTestNG {
 			}
 
 			Assert.assertTrue(ProductAddtoCart.get(i).isDisplayed());
-			
-			childtest.log(Status.INFO, Products.get(i).getText() + "   "  + "   "
-					+ ProductItemCode.get(i).getText() + "  " + ProductPrices.get(i).getText());
+
+			childtest.log(Status.INFO, Products.get(i).getText() + "   " + "   " + ProductItemCode.get(i).getText()
+					+ "  " + ProductPrices.get(i).getText());
 
 			Products.get(i).click();
 
@@ -814,9 +806,9 @@ public class Home extends SuperTestNG {
 	}
 
 	public void RetailALLProductsList() throws IOException, InterruptedException {
-		
+
 		childtest.log(Status.INFO, "<b><font color=green>Retail All products in List View</font></b>");
-		
+
 		ListView.click();
 		ALLProducts.click();
 		childtest.log(Status.INFO, "Retail All products in List View");
@@ -833,10 +825,10 @@ public class Home extends SuperTestNG {
 			Assert.assertEquals(
 					"₹" + p.getProperty(ListViewProductName.get(i).getText().replace(" ", "") + "RETAILPRICE"),
 					"₹" + ProductPrices.get(i).getText());
-			
+
 			childtest.log(Status.INFO, ListViewProductName.get(i).getText() + "   " + "   "
 					+ ListViewProductItemCode.get(i).getText() + "  " + ProductPrices.get(i).getText());
-			
+
 			Assert.assertTrue(ListViewMinus.get(i).isDisplayed());
 			Assert.assertTrue(ListViewQty.get(i).isDisplayed());
 			Assert.assertTrue(ListViewPlus.get(i).isDisplayed());
@@ -869,7 +861,7 @@ public class Home extends SuperTestNG {
 	}
 
 	public void RetailProductsList() throws IOException, InterruptedException {
-		
+
 		childtest.log(Status.INFO, "<b><font color=green>Retail products in List View</font></b>");
 
 		FileReader type = new FileReader(
@@ -890,7 +882,7 @@ public class Home extends SuperTestNG {
 			Assert.assertTrue(ListViewMinus.get(i).isDisplayed());
 			Assert.assertTrue(ListViewQty.get(i).isDisplayed());
 			Assert.assertTrue(ListViewPlus.get(i).isDisplayed());
-			
+
 			childtest.log(Status.INFO, ListViewProductName.get(i).getText() + "   " + "   "
 					+ ListViewProductItemCode.get(i).getText() + "  " + ProductPrices.get(i).getText());
 
@@ -922,7 +914,7 @@ public class Home extends SuperTestNG {
 	}
 
 	public void RetailAccessoriesList() throws IOException, InterruptedException {
-		
+
 		childtest.log(Status.INFO, "<b><font color=green>Retail Accessories in List View</font></b>");
 
 		FileReader type = new FileReader(
@@ -943,8 +935,8 @@ public class Home extends SuperTestNG {
 			Assert.assertTrue(ListViewMinus.get(i).isDisplayed());
 			Assert.assertTrue(ListViewQty.get(i).isDisplayed());
 			Assert.assertTrue(ListViewPlus.get(i).isDisplayed());
-			
-			childtest.log(Status.INFO, ListViewProductName.get(i).getText() + "   "  + "   "
+
+			childtest.log(Status.INFO, ListViewProductName.get(i).getText() + "   " + "   "
 					+ ListViewProductItemCode.get(i).getText() + "  " + ProductPrices.get(i).getText());
 
 			JavascriptExecutor jse = (JavascriptExecutor) driver;
