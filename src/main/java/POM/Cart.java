@@ -549,6 +549,7 @@ public class Cart extends SuperTestNG {
 	}
 	
 	public void signupretail() throws InterruptedException{
+		Thread.sleep(10000);
 		
 		childtest.log(Status.INFO, "Sign up for Retail Customer");
 		
