@@ -307,7 +307,7 @@ public class Home extends SuperTestNG {
 		ALLProducts.click();
 
 		FileReader type = new FileReader(
-				"C:/Users/sumancb/git/IndiaShop/India/src/test/java/property/catalog.properties");
+				System.getProperty("user.dir")+ "/src/main/java/property/catalog.properties");
 		Properties p = new Properties();
 		p.load(type);
 
@@ -362,7 +362,7 @@ public class Home extends SuperTestNG {
 		childtest.log(Status.INFO, "<b><font color=green>Products</font></b>");
 
 		FileReader type = new FileReader(
-				"C:/Users/sumancb/git/IndiaShop/India/src/test/java/property/catalog.properties");
+				System.getProperty("user.dir")+ "/src/main/java/property/catalog.properties");
 		Properties p = new Properties();
 		p.load(type);
 
@@ -418,7 +418,7 @@ public class Home extends SuperTestNG {
 		childtest.log(Status.INFO, "<b><font color=green>Accessories</font></b>");
 
 		FileReader type = new FileReader(
-				"C:/Users/sumancb/git/IndiaShop/India/src/test/java/property/catalog.properties");
+				System.getProperty("user.dir")+ "/src/main/java/property/catalog.properties");
 		Properties p = new Properties();
 		p.load(type);
 
@@ -475,7 +475,7 @@ public class Home extends SuperTestNG {
 		childtest.log(Status.INFO, "<b><font color=green>ALL Products List View</font></b>");
 
 		FileReader type = new FileReader(
-				"C:/Users/sumancb/git/IndiaShop/India/src/test/java/property/catalog.properties");
+				System.getProperty("user.dir")+ "/src/main/java/property/catalog.properties");
 		Properties p = new Properties();
 		p.load(type);
 		Thread.sleep(2000);
@@ -527,7 +527,7 @@ public class Home extends SuperTestNG {
 		childtest.log(Status.INFO, "<b><font color=green>Products List View</font></b>");
 
 		FileReader type = new FileReader(
-				"C:/Users/sumancb/git/IndiaShop/India/src/test/java/property/catalog.properties");
+				System.getProperty("user.dir")+ "/src/main/java/property/catalog.properties");
 		Properties p = new Properties();
 		p.load(type);
 
@@ -581,7 +581,7 @@ public class Home extends SuperTestNG {
 		childtest.log(Status.INFO, "<b><font color=green>Accessories List View</font></b>");
 
 		FileReader type = new FileReader(
-				"C:/Users/sumancb/git/IndiaShop/India/src/test/java/property/catalog.properties");
+				System.getProperty("user.dir")+ "/src/main/java/property/catalog.properties");
 		Properties p = new Properties();
 		p.load(type);
 
@@ -638,7 +638,7 @@ public class Home extends SuperTestNG {
 		ALLProducts.click();
 
 		FileReader type = new FileReader(
-				"C:/Users/sumancb/git/IndiaShop/India/src/test/java/property/catalog.properties");
+				System.getProperty("user.dir")+ "/src/main/java/property/catalog.properties");
 		Properties p = new Properties();
 		p.load(type);
 
@@ -703,7 +703,7 @@ public class Home extends SuperTestNG {
 		childtest.log(Status.INFO, "<b><font color=green>Retail products in Grid View</font></b>");
 
 		FileReader type = new FileReader(
-				"C:/Users/sumancb/git/IndiaShop/India/src/test/java/property/catalog.properties");
+				System.getProperty("user.dir")+ "/src/main/java/property/catalog.properties");
 		Properties p = new Properties();
 		p.load(type);
 
@@ -757,7 +757,7 @@ public class Home extends SuperTestNG {
 		childtest.log(Status.INFO, "<b><font color=green>Retail Accessories in Grid View</font></b>");
 
 		FileReader type = new FileReader(
-				"C:/Users/sumancb/git/IndiaShop/India/src/test/java/property/catalog.properties");
+				System.getProperty("user.dir")+ "/src/main/java/property/catalog.properties");
 		Properties p = new Properties();
 		p.load(type);
 
@@ -813,7 +813,7 @@ public class Home extends SuperTestNG {
 		ALLProducts.click();
 		childtest.log(Status.INFO, "Retail All products in List View");
 		FileReader type = new FileReader(
-				"C:/Users/sumancb/git/IndiaShop/India/src/test/java/property/catalog.properties");
+				System.getProperty("user.dir")+ "/src/main/java/property/catalog.properties");
 		Properties p = new Properties();
 		p.load(type);
 		Thread.sleep(2000);
@@ -865,7 +865,7 @@ public class Home extends SuperTestNG {
 		childtest.log(Status.INFO, "<b><font color=green>Retail products in List View</font></b>");
 
 		FileReader type = new FileReader(
-				"C:/Users/sumancb/git/IndiaShop/India/src/test/java/property/catalog.properties");
+				System.getProperty("user.dir")+ "/src/main/java/property/catalog.properties");
 		Properties p = new Properties();
 		p.load(type);
 		childtest.log(Status.INFO, "Retail products in List View");
@@ -918,7 +918,7 @@ public class Home extends SuperTestNG {
 		childtest.log(Status.INFO, "<b><font color=green>Retail Accessories in List View</font></b>");
 
 		FileReader type = new FileReader(
-				"C:/Users/sumancb/git/IndiaShop/India/src/test/java/property/catalog.properties");
+				System.getProperty("user.dir")+ "/src/main/java/property/catalog.properties");
 		Properties p = new Properties();
 		p.load(type);
 		childtest.log(Status.INFO, "Retail Accessories in List View");

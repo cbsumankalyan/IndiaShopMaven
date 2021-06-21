@@ -7,7 +7,7 @@
 		<class name="Tests.BankWire"/>
         <class name="Tests.CCAvenue"/>
       	<class name="Tests.Essecom"/>
-      	
+      
       	<class name="Tests.QARetail"/>
       	<class name="Tests.QACCAvenue"/>
       	
